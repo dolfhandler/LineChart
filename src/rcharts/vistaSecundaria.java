@@ -32,7 +32,7 @@ public class vistaSecundaria extends javax.swing.JFrame {
         datos = new ArrayList<>();
         datos.add(new Object[]{"Fecha", "Peso"});
         datos.add(new Object[]{"2013", 1000});
-//        datos.add(new Object[]{"2014", 1170});
+        datos.add(new Object[]{"2014", 1170});
 //        datos.add(new Object[]{"2015", 1500});
 //        datos.add(new Object[]{"2016", 2000});
 //        datos.add(new Object[]{"2017", 1400});
