@@ -66,6 +66,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
         datos.add(new Object[]{"2020", 1200});
         datos.add(new Object[]{"2021", 1100});
         listaDatos.add(datos);
+        
+        datos = new ArrayList<>();
+        datos.add(new Object[]{"Fecha", "Peso"});
+        datos.add(new Object[]{"2013", 1200});
+        datos.add(new Object[]{"2014", 300});
+        datos.add(new Object[]{"2015", 850});
+        datos.add(new Object[]{"2016", 2500});
+        datos.add(new Object[]{"2017", 1000});
+        datos.add(new Object[]{"2018", 1230});
+        datos.add(new Object[]{"2019", 990});
+        datos.add(new Object[]{"2020", 1200});
+        datos.add(new Object[]{"2021", 1100});
+        listaDatos.add(datos);
     }
 
     /**
