@@ -47,9 +47,18 @@ public class Panel extends JPanel {
         listaDePuntos = new ArrayList<>();
         colores = new ArrayList<>();
         cargarColores();
+        cargarDatos();
         cargarMaximoYMinimo();
         panelContenedor.addComponentListener(new EventoVentana(this));
         this.addMouseMotionListener(new EventoMouseMotion(this));
+    }
+
+    private void cargarDatos(){
+//        ArrayList<ArrayList<Object[]>> data = new ArrayList<>();
+//        data = (ArrayList<ArrayList<Object[]>>) datos;
+//        for (int i = 0; i < data.size(); i++) {
+//            data.get(i).add(1,new Object[]{"0",1});
+//        }
     }
 
     private void cargarMaximoYMinimo(){
@@ -131,26 +140,24 @@ public class Panel extends JPanel {
         int espacioDisponible = this.getWidth() - margenX*2;
         ArrayList<ArrayList<Object[]>> data = new ArrayList<>();
         data = (ArrayList<ArrayList<Object[]>>) datos;
-        int cantidadDeDatos = data.get(0).size() - 1;
+        int cantidadDeDatos = data.get(0).size();
         int separacion = Math.round(espacioDisponible / cantidadDeDatos);
         sepX = separacion;
 
         g.setColor(Color.darkGray);
         FontMetrics fm = g.getFontMetrics();
-        for (int i = 1; i < data.get(0).size(); i++) {
+        int a = 1;
+        for (int i = 0; a<data.get(0).size(); i+=sepX) {
             g.drawString(
-                    data.get(0).get(i)[0].toString(),
-                    getTX(i * separacion) - (fm.stringWidth(data.get(0).get(i)[0].toString()) / 2),
+                    data.get(0).get(a)[0].toString(),
+                    getTX(i+sepX) - (fm.stringWidth(data.get(0).get(a)[0].toString()) / 2),
                     this.getHeight() - 30
             );
+            a++;
         }
     }
 
     private void pintarEtiquetasEjeY(Graphics2D g) {
-//        ArrayList<ArrayList<Object[]>> data = new ArrayList<>();
-//        data = (ArrayList<ArrayList<Object[]>>) datos;
-//        int maximo = getMaximoValor(data);
-//        int minimo = getMinimoValor(data);
         int espacioDisponible = this.getHeight() - margenY*2;
         int separacion = Math.round(espacioDisponible / (maximo / minimo + 1));
         sepY = separacion;
@@ -186,7 +193,7 @@ public class Panel extends JPanel {
 
     private int getMinimoValor(ArrayList<ArrayList<Object[]>> data) {
         int min = 0;
-        for (int a = 1; a < data.size(); a++) {
+        for (int a = 0; a < data.size(); a++) {
             for (int i = 1; i < data.get(a).size(); i++) {
                 if (i == 1) {
                     min = Integer.parseInt(data.get(a).get(i)[1].toString());
@@ -248,6 +255,7 @@ public class Panel extends JPanel {
     private void pintarRectas(Graphics2D g) {
         ArrayList<ArrayList<Object[]>> data = new ArrayList<>();
         data = (ArrayList<ArrayList<Object[]>>) datos;
+        
 
         for (int i = 0; i < listaDePuntos.size() - 1; i++) {
             if (!((i + 1) % (data.get(0).size() - 1) == 0) && 1 > 0) {
