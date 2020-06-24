@@ -2,6 +2,7 @@ package Charts;
 
 import java.awt.Color;
 import java.awt.Point;
+import javax.swing.JToolTip;
 
 /**
  *
@@ -83,6 +84,10 @@ public class Rectangulo {
 
     public void setColorTexto(Color colorTexto) {
         this.colorTexto = colorTexto;
+    }
+
+    JToolTip createToolTip() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Charts.Eventos;
+package Charts.EventosGraficaDeBarras;
 
-import Charts.Panel;
+import Charts.EventosGraficaDeBarras.*;
+import Charts.GraficaDeBarras.GraficaDeBarras;
+import Charts.GraficaDePuntos.GraficaDePuntos;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 
@@ -15,16 +17,16 @@ import java.awt.event.ComponentListener;
  */
 public class EventoVentana implements ComponentListener {
 
-    private Panel panel;
+    private GraficaDeBarras gb = null;
 
-    public EventoVentana(Panel panelRef) {
-        panel = panelRef;
+    public EventoVentana(Object objReferencia) {
+        gb = (GraficaDeBarras) objReferencia;
     }
 
     @Override
     public void componentResized(ComponentEvent e) {
-        panel.setSize(e.getComponent().getSize());
-        panel.Actualizar();
+        gb.setSize(e.getComponent().getSize());
+        gb.iniciarComponentes();
     }
 
     @Override
@@ -37,6 +39,10 @@ public class EventoVentana implements ComponentListener {
 
     @Override
     public void componentHidden(ComponentEvent e) {
+    }
+
+    private void Actualizar() {
+        gb.Actualizar();
     }
 
 }

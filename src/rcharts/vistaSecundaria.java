@@ -6,7 +6,7 @@
 
 package rcharts;
 
-import Charts.Panel;
+import Charts.GraficaDePuntos.GraficaDePuntos;
 import java.util.ArrayList;
 
 /**
@@ -23,7 +23,7 @@ public class vistaSecundaria extends javax.swing.JFrame {
         datos = new ArrayList<>();
         listaDatos = new ArrayList<>();
         cargarDatos();
-        Panel panel = new Panel(listaDatos, panelcontenedor);
+        GraficaDePuntos panel = new GraficaDePuntos(listaDatos, panelcontenedor);
         panel.setBounds(0, 0, panelcontenedor.getWidth(), panelcontenedor.getHeight());
         panelcontenedor.add(panel);
     }
@@ -31,42 +31,11 @@ public class vistaSecundaria extends javax.swing.JFrame {
     private void cargarDatos() {
         datos = new ArrayList<>();
         datos.add(new Object[]{"Fecha", "Peso"});
-        datos.add(new Object[]{"2013", 1000});
-        datos.add(new Object[]{"2014", 1170});
-//        datos.add(new Object[]{"2015", 1500});
-//        datos.add(new Object[]{"2016", 2000});
-//        datos.add(new Object[]{"2017", 1400});
-//        datos.add(new Object[]{"2018", 3000});
-//        datos.add(new Object[]{"2019", 3500});
-//        datos.add(new Object[]{"2020", 600});
-//        datos.add(new Object[]{"2021", 1870});
+        int anio = 2000;
+        for (int i = 0; i < 20; i++) {
+            datos.add(new Object[]{""+(anio++), (int)(Math.random()*2000)});
+        }
         listaDatos.add(datos);
-//        
-//        datos = new ArrayList<>();
-//        datos.add(new Object[]{"Fecha", "Peso"});
-//        datos.add(new Object[]{"2013", 400});
-//        datos.add(new Object[]{"2014", 500});
-//        datos.add(new Object[]{"2015", 750});
-//        datos.add(new Object[]{"2016", 890});
-//        datos.add(new Object[]{"2017", 1000});
-//        datos.add(new Object[]{"2018", 950});
-//        datos.add(new Object[]{"2019", 700});
-//        datos.add(new Object[]{"2020", 600});
-//        datos.add(new Object[]{"2021", 980});
-//        listaDatos.add(datos);
-//        
-//        datos = new ArrayList<>();
-//        datos.add(new Object[]{"Fecha", "Peso"});
-//        datos.add(new Object[]{"2013", 1200});
-//        datos.add(new Object[]{"2014", 300});
-//        datos.add(new Object[]{"2015", 850});
-//        datos.add(new Object[]{"2016", 2500});
-//        datos.add(new Object[]{"2017", 1000});
-//        datos.add(new Object[]{"2018", 1230});
-//        datos.add(new Object[]{"2019", 1560});
-//        datos.add(new Object[]{"2020", 1200});
-//        datos.add(new Object[]{"2021", 1100});
-//        listaDatos.add(datos);
     }
 
     /**

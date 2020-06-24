@@ -1,5 +1,7 @@
-package Charts;
+package Charts.GraficaDePuntos;
 
+import Charts.IGraficos;
+import Charts.Rectangulo;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
@@ -8,13 +10,14 @@ import java.awt.Point;
  *
  * @author DOLFHANDLER
  */
-public class Punto extends Rectangulo implements IGraficos{
+public class Punto extends Rectangulo implements IGraficos {
+
     private String valorX;
     private String valorY;
     private String EtiquetaEjeY;
     private String EtiquetaEjeX;
 
-    public Punto(String EtiquetaEjeX, String EtiquetaEjeY,String valorX, String valorY, int x, int y, int ancho, int alto, Color colorFondo, Color colorTexto) {
+    public Punto(String EtiquetaEjeX, String EtiquetaEjeY, String valorX, String valorY, int x, int y, int ancho, int alto, Color colorFondo, Color colorTexto) {
         super(x, y, ancho, alto, colorFondo, colorTexto);
         this.valorX = valorX;
         this.valorY = valorY;
@@ -25,8 +28,7 @@ public class Punto extends Rectangulo implements IGraficos{
     @Override
     public void pintar(Graphics2D g) {
         g.setColor(colorFondo);
-        g.fillOval(x-(ancho/2), y-alto/2, ancho, alto);
-        System.out.println("--("+x+","+y+")");
+        g.fillOval(x - (ancho / 2), y - alto / 2, ancho, alto);
     }
 
     public String getEtiquetaEjeY() {
@@ -44,7 +46,7 @@ public class Punto extends Rectangulo implements IGraficos{
     public void setEtiquetaEjeX(String EtiquetaEjeX) {
         this.EtiquetaEjeX = EtiquetaEjeX;
     }
-    
+
     public String getValorX() {
         return valorX;
     }
